@@ -1,0 +1,299 @@
+# Set dmz true if overriding that mob's spawns
+# Blocked area formatting:
+#
+# Ghast:
+#   dmz: true
+#   blocked-areas:
+#     0:
+#       level: world_nether
+#       minX: -100
+#       minZ: -100
+#       maxX: 100
+#       maxZ: 100
+#     1:
+#       level: world_nether
+#       minX: -250
+#       minZ: 440
+#       maxX: 0
+#       maxZ: 520
+
+ALLAY:
+  dmz: false
+  blocked-areas:
+    0:
+AXOLOTL:
+  dmz: false
+  blocked-areas:
+    0:
+BAT:
+  dmz: false
+  blocked-areas:
+    0:
+BEE:
+  dmz: false
+  blocked-areas:
+    0:
+BLAZE:
+  dmz: false
+  blocked-areas:
+    0:
+CAT:
+  dmz: false
+  blocked-areas:
+    0:
+CAVE_SPIDER:
+  dmz: false
+  blocked-areas:
+    0:
+CHICKEN:
+  dmz: false
+  blocked-areas:
+    0:
+COD:
+  dmz: false
+  blocked-areas:
+    0:
+COW:
+  dmz: false
+  blocked-areas:
+    0:
+CREEPER:
+  dmz: false
+  blocked-areas:
+    0:
+DOLPHIN:
+  dmz: false
+  blocked-areas:
+    0:
+DONKEY:
+  dmz: false
+  blocked-areas:
+    0:
+DROWNED:
+  dmz: false
+  blocked-areas:
+    0:
+ELDER_GUARDIAN:
+  dmz: false
+  blocked-areas:
+    0:
+ENDER_DRAGON:
+  dmz: false
+  blocked-areas:
+    0:
+ENDERMAN:
+  dmz: false
+  blocked-areas:
+    0:
+ENDERMITE:
+  dmz: false
+  blocked-areas:
+    0:
+EVOKER:
+  dmz: false
+  blocked-areas:
+    0:
+FOX:
+  dmz: false
+  blocked-areas:
+    0:
+FROG:
+  dmz: false
+  blocked-areas:
+    0:
+GHAST:
+  dmz: false
+  blocked-areas:
+    0:
+GLOW_SQUID:
+  dmz: false
+  blocked-areas:
+    0:
+GOAT:
+  dmz: false
+  blocked-areas:
+    0:
+GUARDIAN:
+  dmz: false
+  blocked-areas:
+    0:
+HOGLIN:
+  dmz: false
+  blocked-areas:
+    0:
+HORSE:
+  dmz: false
+  blocked-areas:
+    0:
+HUSK:
+  dmz: false
+  blocked-areas:
+    0:
+IRON_GOLEM:
+  dmz: false
+  blocked-areas:
+    0:
+LLAMA:
+  dmz: false
+  blocked-areas:
+    0:
+MAGMA_CUBE:
+  dmz: false
+  blocked-areas:
+    0:
+MULE:
+  dmz: false
+  blocked-areas:
+    0:
+MUSHROOM_COW:
+  dmz: false
+  blocked-areas:
+    0:
+OCELOT:
+  dmz: false
+  blocked-areas:
+    0:
+PANDA:
+  dmz: false
+  blocked-areas:
+    0:
+PARROT:
+  dmz: false
+  blocked-areas:
+    0:
+PHANTOM:
+  dmz: false
+  blocked-areas:
+    0:
+PIG:
+  dmz: false
+  blocked-areas:
+    0:
+PIGLIN:
+  dmz: false
+  blocked-areas:
+    0:
+PIGLIN_BRUTE:
+  dmz: false
+  blocked-areas:
+    0:
+PILLAGER:
+  dmz: false
+  blocked-areas:
+    0:
+POLAR_BEAR:
+  dmz: false
+  blocked-areas:
+    0:
+PUFFERFISH:
+  dmz: false
+  blocked-areas:
+    0:
+RABBIT:
+  dmz: false
+  blocked-areas:
+    0:
+RAVAGER:
+  dmz: false
+  blocked-areas:
+    0:
+SALMON:
+  dmz: false
+  blocked-areas:
+    0:
+SHEEP:
+  dmz: false
+  blocked-areas:
+    0:
+SHULKER:
+  dmz: false
+  blocked-areas:
+    0:
+SILVERFISH:
+  dmz: false
+  blocked-areas:
+    0:
+SKELETON:
+  dmz: false
+  blocked-areas:
+    0:
+SKELETON_HORSE:
+  dmz: false
+  blocked-areas:
+    0:
+SLIME:
+  dmz: false
+  blocked-areas:
+    0:
+SPIDER:
+  dmz: false
+  blocked-areas:
+    0:
+SQUID:
+  dmz: false
+  blocked-areas:
+    0:
+STRAY:
+  dmz: false
+  blocked-areas:
+    0:
+STRIDER:
+  dmz: false
+  blocked-areas:
+    0:
+TADPOLE:
+  dmz: false
+  blocked-areas:
+    0:
+TRADER_LLAMA:
+  dmz: false
+  blocked-areas:
+    0:
+TROPICAL_FISH:
+  dmz: false
+  blocked-areas:
+    0:
+TURTLE:
+  dmz: false
+  blocked-areas:
+    0:
+VILLAGER:
+  dmz: false
+  blocked-areas:
+    0:
+VINDICATOR:
+  dmz: false
+  blocked-areas:
+    0:
+WANDERING_TRADER:
+  dmz: false
+  blocked-areas:
+    0:
+WARDEN:
+  dmz: false
+  blocked-areas:
+    0:
+WITCH:
+  dmz: false
+  blocked-areas:
+    0:
+WITHER_SKELETON:
+  dmz: false
+  blocked-areas:
+    0:
+WOLF:
+  dmz: false
+  blocked-areas:
+    0:
+ZOMBIE:
+  dmz: false
+  blocked-areas:
+    0:
+ZOMBIE_VILLAGER:
+  dmz: false
+  blocked-areas:
+    0:
+ZOMBIFIED_PIGLIN:
+  dmz: false
+  blocked-areas:
+    0:
