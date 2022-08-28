@@ -1,3 +1,7 @@
+# Prevent Portal Spawns:
+disable_portal_spawns: false
+
+
 # Set dmz true if overriding that mob's spawns
 # Blocked area formatting:
 #

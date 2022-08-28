@@ -1,6 +1,7 @@
 package net.fg83.mobdmz;
 
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.CreatureSpawnEvent;
@@ -53,37 +54,42 @@ public final class main extends JavaPlugin implements Listener {
     }
     @EventHandler
     public void onEntitySpawn(CreatureSpawnEvent newSpawn){
-        String mobName = newSpawn.getEntityType().toString();
-        Location location = newSpawn.getLocation();
-        if (getConfig().getConfigurationSection(mobName) == null){
-            getLogger().info("No config defined for " + mobName + "!");
-        }
-        else {
-            Boolean hasDMZ = getConfig().getBoolean(mobName + ".dmz");
-            if (hasDMZ){
-                for (String key : getConfig().getConfigurationSection(mobName + ".blocked-areas").getKeys(false)){
-                    if (
-                        getConfig().getString(mobName + ".blocked-areas." + key + ".level") == null ||
-                        getConfig().getString(mobName + ".blocked-areas." + key + ".minX") == null ||
-                        getConfig().getString(mobName + ".blocked-areas." + key + ".minZ") == null ||
-                        getConfig().getString(mobName + ".blocked-areas." + key + ".maxX") == null ||
-                        getConfig().getString(mobName + ".blocked-areas." + key + ".maxZ") == null
-                    ){
-                        getLogger().info("No DMZ defined for " + mobName + "!");
-                        break;
-                    }
-                    DMZ dmz = new DMZ(
-                            getConfig().get(mobName + ".blocked-areas." + key + ".level").toString().toLowerCase(),
-                            getConfig().getInt(mobName + ".blocked-areas." + key + ".minX"),
-                            getConfig().getInt(mobName + ".blocked-areas." + key + ".minZ"),
-                            getConfig().getInt(mobName + ".blocked-areas." + key + ".maxX"),
-                            getConfig().getInt(mobName + ".blocked-areas." + key + ".maxZ")
-                    );
-                    if (dmz.contains(location.getWorld().getName().toLowerCase(), location.getX(), location.getZ())){
-                        if (newSpawn.getSpawnReason().equals(CreatureSpawnEvent.SpawnReason.NATURAL)) {
-                            newSpawn.setCancelled(true);
+        if (newSpawn.getSpawnReason().equals(CreatureSpawnEvent.SpawnReason.NATURAL)) {
+            String mobName = newSpawn.getEntityType().toString();
+            Location location = newSpawn.getLocation();
+            if (location.getBlock().getType().equals(Material.NETHER_PORTAL)){
+                if (getConfig().getBoolean("disable_portal_spawns")){
+                    newSpawn.setCancelled(true);
+                }
+            }
+            if (getConfig().getConfigurationSection(mobName) == null){
+                getLogger().info("No config defined for " + mobName + "!");
+            }
+            else {
+                boolean hasDMZ = getConfig().getBoolean(mobName + ".dmz");
+                if (hasDMZ){
+                    for (String key : getConfig().getConfigurationSection(mobName + ".blocked-areas").getKeys(false)){
+                        if (
+                            getConfig().getString(mobName + ".blocked-areas." + key + ".level") == null ||
+                            getConfig().getString(mobName + ".blocked-areas." + key + ".minX") == null ||
+                            getConfig().getString(mobName + ".blocked-areas." + key + ".minZ") == null ||
+                            getConfig().getString(mobName + ".blocked-areas." + key + ".maxX") == null ||
+                            getConfig().getString(mobName + ".blocked-areas." + key + ".maxZ") == null
+                        ){
+                            getLogger().info("No DMZ defined for " + mobName + "!");
+                            break;
                         }
-                        break;
+                        DMZ dmz = new DMZ(
+                                getConfig().get(mobName + ".blocked-areas." + key + ".level").toString().toLowerCase(),
+                                getConfig().getInt(mobName + ".blocked-areas." + key + ".minX"),
+                                getConfig().getInt(mobName + ".blocked-areas." + key + ".minZ"),
+                                getConfig().getInt(mobName + ".blocked-areas." + key + ".maxX"),
+                                getConfig().getInt(mobName + ".blocked-areas." + key + ".maxZ")
+                        );
+                        if (dmz.contains(location.getWorld().getName().toLowerCase(), location.getX(), location.getZ())){
+                            newSpawn.setCancelled(true);
+                            break;
+                        }
                     }
                 }
             }

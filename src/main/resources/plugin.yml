@@ -4,5 +4,5 @@ main: net.fg83.mobdmz.main
 api-version: 1.19
 prefix: mobdmz
 authors: [ fingerguns83 ]
-description: Prevent mob spawns within set area
+description: Prevent natural mob spawns easily
 website: https://fg83.net
