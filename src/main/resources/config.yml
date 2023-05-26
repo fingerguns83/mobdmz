@@ -1,7 +1,3 @@
-# Prevent Portal Spawns:
-disable_portal_spawns: false
-
-
 # Set dmz true if overriding that mob's spawns
 # Blocked area formatting:
 #
@@ -10,16 +6,20 @@ disable_portal_spawns: false
 #   blocked-areas:
 #     0:
 #       level: world_nether
-#       minX: -100
-#       minZ: -100
-#       maxX: 100
-#       maxZ: 100
+#       X1: -100
+#       Y1: -64
+#       Z1: -100
+#       X2: 100
+#       Y2: 320
+#       Z2: 100
 #     1:
 #       level: world_nether
-#       minX: -250
-#       minZ: 440
-#       maxX: 0
-#       maxZ: 520
+#       X1: -250
+#       Y1: 50
+#       Z1: 440
+#       X2: 0
+#       Y2: 100
+#       Z2: 520
 
 ALLAY:
   dmz: false
@@ -299,5 +299,49 @@ ZOMBIE_VILLAGER:
     0:
 ZOMBIFIED_PIGLIN:
   dmz: false
+  blocked-areas:
+    0:
+
+
+#-----------------------------------------------
+# Prevent Portal Spawns
+
+disable_portal_spawns: false
+
+# If portal spawns are disabled (to mitigate weird spawning issues with other mobs), use this option to re-enable zombified piglin portal spawning if you wish.
+allow_ziglin_portal_spawns: false
+
+#-----------------------------------------------
+# Prevent Mob Griefing
+# Ender Dragon, Enderman, Creeper, Ghast, and Wither griefing can be global or area-restricted. The global option will override any blocked areas.
+# Note: For Creeper, Ghast, and Wither, this is based on where the explosion happens. If the explosion happens just outside of the zone, blocks inside of the zone can still break. Plan accordingly.
+
+prevent_dragon_grief:
+  enabled: false
+  global: true
+  blocked-areas:
+    0:
+
+prevent_enderman_grief:
+  enabled: false
+  global: true
+  blocked-areas:
+    0:
+
+prevent_creeper_grief:
+  enabled: false
+  global: true
+  blocked-areas:
+    0:
+
+prevent_ghast_grief:
+  enabled: false
+  global: true
+  blocked-areas:
+    0:
+
+prevent_wither_grief:
+  enabled: false
+  global: true
   blocked-areas:
     0:

@@ -1,6 +1,6 @@
 name: mobdmz
 version: '${project.version}'
-main: net.fg83.mobdmz.main
+main: net.fg83.mobdmz.MobDMZ
 api-version: 1.19
 prefix: mobdmz
 authors: [ fingerguns83 ]
