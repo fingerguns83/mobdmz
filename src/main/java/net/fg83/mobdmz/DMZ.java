@@ -1,76 +1,103 @@
 package net.fg83.mobdmz;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.World;
 
 public class DMZ {
-    public MobDMZ plugin;
-    public String configKey;
+    private String level;
+    private World world;
+    private double factor = 0;
 
-    public DMZ(MobDMZ plugin, String configKey){
-        this.plugin = plugin;
-        this.configKey = configKey;
+    private int x1 = 0;
+    private int x2 = 0;
+    private int y1 = 0;
+    private int y2 = 0;
+    private int z1 = 0;
+    private int z2 = 0;
+
+    public DMZ(String level, double factor, int x1, int x2, int y1, int y2, int z1, int z2){
+        this.level = level;
+        this.factor = factor;
+        this.x1 = x1;
+        this.x2 = x2;
+        this.y1 = y1;
+        this.y2 = y2;
+        this.z1 = z1;
+        this.z2 = z2;
+
+        this.bindWorld();
     }
-    public Boolean contains(Location location) throws NullPointerException {
-        try {
-            for (String key : plugin.getConfig().getConfigurationSection(this.configKey + ".blocked-areas").getKeys(false)) {
-                if (plugin.getConfig().getString(this.configKey + ".blocked-areas." + key + ".level") == null ||
-                        plugin.getConfig().getString(this.configKey + ".blocked-areas." + key + ".X1") == null ||
-                        plugin.getConfig().getString(this.configKey + ".blocked-areas." + key + ".Y1") == null ||
-                        plugin.getConfig().getString(this.configKey + ".blocked-areas." + key + ".Z1") == null ||
-                        plugin.getConfig().getString(this.configKey + ".blocked-areas." + key + ".X2") == null ||
-                        plugin.getConfig().getString(this.configKey + ".blocked-areas." + key + ".Y2") == null ||
-                        plugin.getConfig().getString(this.configKey + ".blocked-areas." + key + ".Z2") == null
-                ) {
-                    plugin.getLogger().info("Malformed DMZ for " + configKey + "!");
-                    break;
-                }
-                String configLevel = plugin.getConfig().get(this.configKey + ".blocked-areas." + key + ".level").toString().toLowerCase();
-                int x1 = plugin.getConfig().getInt(this.configKey + ".blocked-areas." + key + ".X1");
-                int y1 = plugin.getConfig().getInt(this.configKey + ".blocked-areas." + key + ".Y1");
-                int z1 = plugin.getConfig().getInt(this.configKey + ".blocked-areas." + key + ".Z1");
-                int x2 = plugin.getConfig().getInt(this.configKey + ".blocked-areas." + key + ".X2");
-                int y2 = plugin.getConfig().getInt(this.configKey + ".blocked-areas." + key + ".Y2");
-                int z2 = plugin.getConfig().getInt(this.configKey + ".blocked-areas." + key + ".Z2");
 
-                int minX;
-                int minY;
-                int minZ;
-                int maxX;
-                int maxY;
-                int maxZ;
+    public void setLevel(String level) {
+        this.level = level;
+    }
 
-                if (x1 < x2) {
-                    minX = x1;
-                    maxX = x2;
-                } else {
-                    minX = x2;
-                    maxX = x1;
-                }
-                if (z1 < z2) {
-                    minZ = z1;
-                    maxZ = z2;
-                } else {
-                    minZ = z2;
-                    maxZ = z1;
-                }
-                if (y1 < y2) {
-                    minY = y1;
-                    maxY = y2;
-                } else {
-                    minY = y2;
-                    maxY = y1;
-                }
-                if (location.getX() >= minX && location.getX() <= maxX + 0.5 && location.getY() >= minY && location.getY() <= maxY && location.getZ() >= minZ && location.getZ() <= maxZ + 0.5) {
-                    if (configLevel.contains(location.getWorld().getName().toLowerCase())) {
-                        return true;
-                    }
-                }
-            }
-            return false;
+    public double getFactor() {
+        return this.factor;
+    }
+    public void setFactor(double factor) {
+        this.factor = factor;
+    }
+
+    public void setX1(int x1) {
+        this.x1 = x1;
+    }
+    public void setX2(int x2) {
+        this.x2 = x2;
+    }
+
+    public void setY1(int y1) {
+        this.y1 = y1;
+    }
+    public void setY2(int y2) {
+        this.y2 = y2;
+    }
+
+    public void setZ1(int z1) {
+        this.z1 = z1;
+    }
+    public void setZ2(int z2) {
+        this.z2 = z2;
+    }
+
+    public void bindWorld(){
+        this.world = Bukkit.getServer().getWorld(this.level);
+    }
+
+    public boolean contains(Location location){
+        int minX;
+        int minY;
+        int minZ;
+        int maxX;
+        int maxY;
+        int maxZ;
+
+        if (this.x1 < this.x2) {
+            minX = this.x1;
+            maxX = this.x2;
+        } else {
+            minX = this.x2;
+            maxX = this.x1;
         }
-        catch (NullPointerException e){
-            plugin.getLogger().info("Caught NullPointerException. Something is wrong with your config!");
-            return false;
+        if (this.z1 < this.z2) {
+            minZ = this.z1;
+            maxZ = this.z2;
+        } else {
+            minZ = this.z2;
+            maxZ = this.z1;
         }
+        if (this.y1 < this.y2) {
+            minY = this.y1;
+            maxY = this.y2;
+        } else {
+            minY = this.y2;
+            maxY = this.y1;
+        }
+
+        if (location.getX() >= minX && location.getX() <= maxX + 0.5 && location.getY() >= minY && location.getY() <= maxY && location.getZ() >= minZ && location.getZ() <= maxZ + 0.5) {
+            return this.world.equals(location.getWorld());
+        }
+        return false;
     }
 }

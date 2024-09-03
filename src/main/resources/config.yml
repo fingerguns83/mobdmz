@@ -1,306 +1,20 @@
-# Set dmz true if overriding that mob's spawns
-# Blocked area formatting:
+# Spawning DMZs
+# Use mob names (all uppercase) found here: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/EntityType.html
+# "factor" is the relative rate of spawns (double between 0-1).
+# A factor of "0" turns off spawning altogether. A factor of "0.3" means spawns will be reduced to 30% of standard rates.
 #
-# Ghast:
-#   dmz: true
-#   blocked-areas:
-#     0:
-#       level: world_nether
-#       X1: -100
-#       Y1: -64
-#       Z1: -100
-#       X2: 100
-#       Y2: 320
-#       Z2: 100
-#     1:
-#       level: world_nether
-#       X1: -250
-#       Y1: 50
-#       Z1: 440
-#       X2: 0
-#       Y2: 100
-#       Z2: 520
+# If you're unsure about level names, check "available-levels.txt" for a current list of levels.
 
-ALLAY:
-  dmz: false
-  blocked-areas:
-    0:
-AXOLOTL:
-  dmz: false
-  blocked-areas:
-    0:
-BAT:
-  dmz: false
-  blocked-areas:
-    0:
-BEE:
-  dmz: false
-  blocked-areas:
-    0:
-BLAZE:
-  dmz: false
-  blocked-areas:
-    0:
-CAT:
-  dmz: false
-  blocked-areas:
-    0:
-CAVE_SPIDER:
-  dmz: false
-  blocked-areas:
-    0:
-CHICKEN:
-  dmz: false
-  blocked-areas:
-    0:
-COD:
-  dmz: false
-  blocked-areas:
-    0:
-COW:
-  dmz: false
-  blocked-areas:
-    0:
-CREEPER:
-  dmz: false
-  blocked-areas:
-    0:
-DOLPHIN:
-  dmz: false
-  blocked-areas:
-    0:
-DONKEY:
-  dmz: false
-  blocked-areas:
-    0:
-DROWNED:
-  dmz: false
-  blocked-areas:
-    0:
-ELDER_GUARDIAN:
-  dmz: false
-  blocked-areas:
-    0:
-ENDER_DRAGON:
-  dmz: false
-  blocked-areas:
-    0:
-ENDERMAN:
-  dmz: false
-  blocked-areas:
-    0:
-ENDERMITE:
-  dmz: false
-  blocked-areas:
-    0:
-EVOKER:
-  dmz: false
-  blocked-areas:
-    0:
-FOX:
-  dmz: false
-  blocked-areas:
-    0:
-FROG:
-  dmz: false
-  blocked-areas:
-    0:
-GHAST:
-  dmz: false
-  blocked-areas:
-    0:
-GLOW_SQUID:
-  dmz: false
-  blocked-areas:
-    0:
-GOAT:
-  dmz: false
-  blocked-areas:
-    0:
-GUARDIAN:
-  dmz: false
-  blocked-areas:
-    0:
-HOGLIN:
-  dmz: false
-  blocked-areas:
-    0:
-HORSE:
-  dmz: false
-  blocked-areas:
-    0:
-HUSK:
-  dmz: false
-  blocked-areas:
-    0:
-IRON_GOLEM:
-  dmz: false
-  blocked-areas:
-    0:
-LLAMA:
-  dmz: false
-  blocked-areas:
-    0:
-MAGMA_CUBE:
-  dmz: false
-  blocked-areas:
-    0:
-MULE:
-  dmz: false
-  blocked-areas:
-    0:
-MUSHROOM_COW:
-  dmz: false
-  blocked-areas:
-    0:
-OCELOT:
-  dmz: false
-  blocked-areas:
-    0:
-PANDA:
-  dmz: false
-  blocked-areas:
-    0:
-PARROT:
-  dmz: false
-  blocked-areas:
-    0:
-PHANTOM:
-  dmz: false
-  blocked-areas:
-    0:
-PIG:
-  dmz: false
-  blocked-areas:
-    0:
-PIGLIN:
-  dmz: false
-  blocked-areas:
-    0:
-PIGLIN_BRUTE:
-  dmz: false
-  blocked-areas:
-    0:
-PILLAGER:
-  dmz: false
-  blocked-areas:
-    0:
-POLAR_BEAR:
-  dmz: false
-  blocked-areas:
-    0:
-PUFFERFISH:
-  dmz: false
-  blocked-areas:
-    0:
-RABBIT:
-  dmz: false
-  blocked-areas:
-    0:
-RAVAGER:
-  dmz: false
-  blocked-areas:
-    0:
-SALMON:
-  dmz: false
-  blocked-areas:
-    0:
-SHEEP:
-  dmz: false
-  blocked-areas:
-    0:
-SHULKER:
-  dmz: false
-  blocked-areas:
-    0:
-SILVERFISH:
-  dmz: false
-  blocked-areas:
-    0:
-SKELETON:
-  dmz: false
-  blocked-areas:
-    0:
-SKELETON_HORSE:
-  dmz: false
-  blocked-areas:
-    0:
-SLIME:
-  dmz: false
-  blocked-areas:
-    0:
-SPIDER:
-  dmz: false
-  blocked-areas:
-    0:
-SQUID:
-  dmz: false
-  blocked-areas:
-    0:
-STRAY:
-  dmz: false
-  blocked-areas:
-    0:
-STRIDER:
-  dmz: false
-  blocked-areas:
-    0:
-TADPOLE:
-  dmz: false
-  blocked-areas:
-    0:
-TRADER_LLAMA:
-  dmz: false
-  blocked-areas:
-    0:
-TROPICAL_FISH:
-  dmz: false
-  blocked-areas:
-    0:
-TURTLE:
-  dmz: false
-  blocked-areas:
-    0:
-VILLAGER:
-  dmz: false
-  blocked-areas:
-    0:
-VINDICATOR:
-  dmz: false
-  blocked-areas:
-    0:
-WANDERING_TRADER:
-  dmz: false
-  blocked-areas:
-    0:
-WARDEN:
-  dmz: false
-  blocked-areas:
-    0:
-WITCH:
-  dmz: false
-  blocked-areas:
-    0:
-WITHER_SKELETON:
-  dmz: false
-  blocked-areas:
-    0:
-WOLF:
-  dmz: false
-  blocked-areas:
-    0:
-ZOMBIE:
-  dmz: false
-  blocked-areas:
-    0:
-ZOMBIE_VILLAGER:
-  dmz: false
-  blocked-areas:
-    0:
-ZOMBIFIED_PIGLIN:
-  dmz: false
-  blocked-areas:
-    0:
+GIANT:
+  0:
+    level: world_nether
+    factor: 0
+    x1: -10
+    y1: 20
+    z1: -20
+    x2: -30
+    y2: 60
+    z2: 20
 
 
 #-----------------------------------------------
@@ -311,10 +25,12 @@ disable_portal_spawns: false
 # If portal spawns are disabled (to mitigate weird spawning issues with other mobs), use this option to re-enable zombified piglin portal spawning if you wish.
 allow_ziglin_portal_spawns: false
 
+
 #-----------------------------------------------
 # Prevent Mob Griefing
 # Ender Dragon, Enderman, Creeper, Ghast, and Wither griefing can be global or area-restricted. The global option will override any blocked areas.
 # Note: For Creeper, Ghast, and Wither, this is based on where the explosion happens. If the explosion happens just outside of the zone, blocks inside of the zone can still break. Plan accordingly.
+# Like spawning DMZs, you can have a "factor". I don't know why you'd want to, but you can. Set it to zero or leave it blank to disable 100% of explosions.
 
 prevent_dragon_grief:
   enabled: false
@@ -330,9 +46,16 @@ prevent_enderman_grief:
 
 prevent_creeper_grief:
   enabled: false
-  global: true
+  global: false
   blocked-areas:
     0:
+      level: world
+      x1: -10
+      y1: 20
+      z1: -20
+      x2: -30
+      y2: 60
+      z2: 20
 
 prevent_ghast_grief:
   enabled: false
